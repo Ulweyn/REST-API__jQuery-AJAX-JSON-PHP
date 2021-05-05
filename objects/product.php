@@ -68,6 +68,27 @@ class Product{
         return false;
     }
 
+    // используется при заполнении формы обновления товара
+    function readOne(){
+
+        // запрос для чтения одной записи (товара)
+        $query = "SELECT
+                    c.name as category_name,p.id,p.name,p.description,p.price,p.category_id,p.category_name
+                FROM
+                    " . $this->table_name . " p
+                    LEFT OUTER JOIN
+                        categories c
+                            ON p.category_id = c.id
+                WHERE
+                    p.id = ?
+                LIMIT
+                    0,1";
+        
+        // подготовка запроса
+        $stmt = $this->conn->prepare( $query );
+
+        // подвязываем id товара, который будет обновлен
+    }
 
 }
 
