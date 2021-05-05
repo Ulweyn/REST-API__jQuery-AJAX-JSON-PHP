@@ -11,3 +11,5 @@ include_once '../configu/database.php';
 include_once '../objects/products.php';
 
 // получаем соединение с базой данных
+
+
