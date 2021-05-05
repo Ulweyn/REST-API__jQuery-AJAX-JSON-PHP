@@ -46,3 +46,4 @@
         echo json_encode (array("message" => "Товары не найдены"), JSON_UNESCAPED_UNICODE);
     }
 
+?>
