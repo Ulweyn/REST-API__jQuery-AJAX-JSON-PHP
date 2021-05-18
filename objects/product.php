@@ -88,6 +88,15 @@ class Product{
         $stmt = $this->conn->prepare( $query );
 
         // подвязываем id товара, который будет обновлен
+        $stmt->bindParam(1, $this->id);
+
+        // выполняем запрос
+        $stmt->execute();
+
+        // получаем извлеченную строку
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        
+
     }
 
 }
