@@ -7,12 +7,12 @@ header("Access-Control-Allow-Credentials: true");
 header("Content-Type: application:json");
 
 // подключение файла для соединения с базой данных
-include_once '../configu/database.php';
-include_once '../objects/products.php';
+include_once '../config/database.php';
+include_once '../objects/product.php';
 
 // получаем соединение с базой данных
 $database = new Database();
-$db = $database->getConnection();
+$db = $database->get_Connection();
 
 // подготовка объекта
 $product = new Product($db);

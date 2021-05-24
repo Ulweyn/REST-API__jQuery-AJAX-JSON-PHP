@@ -29,7 +29,7 @@ class Product{
                         p.created DESC ";
 
         // подготовка запроса                
-        $stmt = $this->conn->prepare();
+        $stmt = $this->conn->prepare($query);
     
         // выполнение запроса
         $stmt->execute();
@@ -73,7 +73,7 @@ class Product{
 
         // запрос для чтения одной записи (товара)
         $query = "SELECT
-                    c.name as category_name,p.id,p.name,p.description,p.price,p.category_id,p.category_name
+                    c.name as category_name,p.id,p.name,p.description,p.price,p.category_id,p.created
                 FROM
                     " . $this->table_name . " p
                     LEFT OUTER JOIN
