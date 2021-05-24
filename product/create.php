@@ -10,15 +10,15 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 include_once '../config/database.php';
 
 // создание объекта товара
-include_once '../objects/products.php';
+include_once '../objects/product.php';
 
 $database = new Database();
-$db=$database->getConnection();
+$db=$database->get_Connection();
 
 $product = new Product($db);
 
 // получаем запрашиваемые данные
-$data = json_decoder(file_get_contents("php://input"));
+$data = json_decode(file_get_contents("php://input"));
 
 // убеждаемся что данные не пусты
 if(
@@ -36,7 +36,7 @@ if(
     $product->created = date('Y-m-d H:i:s');
 
     // создание товара
-    if(product->create()){
+    if($product->create()){
 
         // код ответа - 201 - создано
         http_response_code(201);
@@ -59,7 +59,7 @@ else{
     http_response_code(400);
 
     // сообщим пользователю
-    echo jason_encode(array("message"=>"Невозмножно создать товар. Данные неполные"),JSON_UNESCAPED_UNICODE);
+    echo json_encode(array("message"=>"Невозмножно создать товар. Данные неполные"),JSON_UNESCAPED_UNICODE);
     
 }
 ?>

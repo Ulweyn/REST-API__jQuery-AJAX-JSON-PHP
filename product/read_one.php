@@ -11,8 +11,8 @@ include_once '../configu/database.php';
 include_once '../objects/products.php';
 
 // получаем соединение с базой данных
-$database = new Datebase();
-$db = $datedate->getConnection();
+$database = new Database();
+$db = $database->getConnection();
 
 // подготовка объекта
 $product = new Product($db);

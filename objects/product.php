@@ -18,7 +18,7 @@ class Product{
         $this->conn=$db;
     }
 
-    public read (){
+    public function read(){
         $query = "  SELECT
                         c.name as category_name, p.id, p.name, p.description, p.price, p.category_id, p.created
                     FROM 
