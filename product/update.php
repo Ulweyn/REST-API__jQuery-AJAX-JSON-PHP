@@ -13,3 +13,6 @@ incelude_once '../objects/product.php';
 // получаем соединение с базой данных
 $database = new DataBase();
 $db = $database->getConnection();
+
+// подготовка обьекта
+$product = new Product($db);

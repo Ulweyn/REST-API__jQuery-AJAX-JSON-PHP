@@ -102,7 +102,7 @@ class Product{
         $this->description = $row['description'];
         $this->category_id = $row['category_id'];
         $this->category_name = $row['category_name'];
-
+        
 
     }
 
