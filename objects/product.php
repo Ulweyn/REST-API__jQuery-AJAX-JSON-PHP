@@ -106,6 +106,34 @@ class Product{
 
     }
 
+    // метод update() - обновление товара
+    function update(){
+
+        // запрос для обновления товара
+        $query = "UPDATE
+                    " . $this->table_name . "
+                SET
+                    name = :name,
+                    price = :price,
+                    description = :description,
+                    category_id = :category_id
+                WHERE
+                    id = :id";
+
+        // подготовка запроса
+        $stmt = $this->conn->prepare($query);
+
+        // очистка
+        $this->name=htmlspecialchars(strip_tags($this->name));
+        $this->price=htmlspecialchars(strip_tags($this->price));
+        $this->description=htmlspecialchars(strip_tags($this->description));
+        $this->category_id=htmlspecialchars(strip_tags($this->category_id));
+        $this->id=htmlspecialchars(strip_tags($this->id));
+
+        // присваиваем значения
+
+
+    }
+
 }
 
-?>

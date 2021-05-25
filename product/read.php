@@ -32,7 +32,7 @@
                 "category_id" => $category_id,
                 "category_name" => $category_name
             );
-            
+
             array_push($products_arr["records"], $product_item);
         
         }
