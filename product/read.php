@@ -21,16 +21,16 @@
         
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
             // Извлекаем строку
-            extract($row);
+
 
 
             $product_item= array(
-                "id" => $id,
-                "name" => $name,
-                "description" => html_entity_decode($description),
-                "price" => $price,
-                "category_id" => $category_id,
-                "category_name" => $category_name
+                "id" => $row['id'],
+                "name" => $row['name'],
+                "description" => html_entity_decode($row['description']),
+                "price" => $row['price'],
+                "category_id" => $row['category_id'],
+                "category_name" => $row['category_name']
             );
 
             array_push($products_arr["records"], $product_item);

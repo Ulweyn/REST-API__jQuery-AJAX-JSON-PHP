@@ -131,7 +131,17 @@ class Product{
         $this->id=htmlspecialchars(strip_tags($this->id));
 
         // присваиваем значения
+        $stmt->bindParam(":name",$this->name);
+        $stmt->bindParam(":price",$this->price);
+        $stmt->bindParam(":description",$this->description);
+        $stmt->bindParam(":category_id",$this->category_id);
+        $stmt->bindParam(":id",$this->id);
 
+        // выполняем запрос
+        if ($stmt->execute()){
+            return true;
+        }
+        return false;
 
     }
 
