@@ -17,6 +17,9 @@ $db = $database->get_Connection();
 $product = new Product($db);
 
 // получаем id товара для редактирования
+$data = json_decode(file_get_contents("php://input"));
+
+// получаем id товара для редактирования
 $product->id = $data->id;
 
 // установим значения свойств товара
