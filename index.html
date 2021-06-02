@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Title</title>
+
+    <!-- bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+
+    <!-- основной CSS -->
+    <link href="app/assets/css/style.css" rel="stylesheet" />
+</head>
+<body>
+
+<!-- Здесь будет выводится наше приложение -->
+<div id="app"></div>
+
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- bootstrap JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+<!-- Для всплывающих окон -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.5.2/bootbox.min.js"></script>
+
+<!-- Основной файл скриптов -->
+<script src="app/app.js"></script>
+
+<!-- products scripts -->
+<script src="app/products/read-products.js"></script>
+<script src="app/products/create-products.js"></script>
+<script src="app/products/read-one-products.js"></script>
+<script src="app/products/update-products.js"></script>
+<script src="app/products/delete-products.js"></script>
+
+<p>Content here. <a class="alert" href=#>Alert!</a></p>
+<script>
+    $(document).on("click", ".alert", function(e) {
+        bootbox.alert("This is the default alert!");
+    });
+
+</script>
+</body>
+</html>
