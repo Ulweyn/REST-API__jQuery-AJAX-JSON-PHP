@@ -31,4 +31,21 @@ class Category {
 
         return $stmt;
     }
+
+    // используем раскрывающийся список выбора
+    public function read(){
+
+        // выбираем все данные
+        $query = "SELECT
+                    id, name, description
+                  FROM
+                      " . $this->table_name . "
+                  ORDER BY
+                     name";
+
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+
+        return $stmt;
+    }
 }

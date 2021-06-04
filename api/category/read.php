@@ -21,7 +21,7 @@ $num = $stmt->rowCount();
 // проверяем, найдено ли больше 0 записей
 if($num>0){
 
-    // массива
+    // массив
     $categories_arr=array();
     $categories_arr["records"]=array();
 
@@ -34,7 +34,7 @@ if($num>0){
         $category_item=array(
             "id" => $id,
             "name" => $name,
-            "description" => $description
+            "description" => html_entity_decode($description)
         );
 
         array_push($categories_arr["records"], $category_item);
@@ -44,7 +44,7 @@ if($num>0){
     http_response_code(200);
 
     // покажем данные категорий в формате json
-    echo json_encode($category_item);
+    echo json_encode($categories_arr);
 
 } else {
 
