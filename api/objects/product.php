@@ -149,7 +149,7 @@ class Product{
     function delete(){
 
         // запрос для удаления записи (товара)
-        $query="DELETET FROM" . $this->table_name . " WHERE id=?";
+        $query="DELETE FROM " . $this->table_name . " WHERE id=?";
 
         // подготовка запроса
         $stmt = $this->conn->prepare($query);
