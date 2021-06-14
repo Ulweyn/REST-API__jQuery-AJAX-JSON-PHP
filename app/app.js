@@ -1,3 +1,4 @@
+
 jQuery(function ($) {
     // HTML приложения
     var app_html=`
@@ -26,7 +27,7 @@ function changePageTitle(page_title) {
 
 // функция для создания значений формы в формате json
 $.fn.serializeObject = function () {
-    var o= {};
+    var o = {};
     var a = this.serializeArray();
     $.each(a,function () {
         if(o[this.name]!== undefined){

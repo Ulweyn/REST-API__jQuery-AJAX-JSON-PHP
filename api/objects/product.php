@@ -33,7 +33,7 @@ class Product{
     
         // выполнение запроса
         $stmt->execute();
-     
+
         return $stmt;
     }
 

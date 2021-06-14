@@ -66,7 +66,25 @@ jQuery(function ($) {
 
     // будет работать, если создана форма товара
     $(document).on('submit', '#create-product-form', function () {
+        //  получение данных формы
+        var form_data=JSON.stringify($(this).serializeObject());
 
+        // отправка данных в API
+        $.ajax({
+            url: "api/product/create.php",
+            type: "POST",
+            contentType: 'application/json',
+            data: form_data,
+            success: function (result) {
+                // продукт был создан, вернутся к списку продуктов
+                showProducts();
+                },
+            errors: function (xhr, resp, text) {
+                // вывести ошибку в консоль
+                console.log(xhr, resp, text);
+            }
+        });
+        return false;
     });
 
 })
