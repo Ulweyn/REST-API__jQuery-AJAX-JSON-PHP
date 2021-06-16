@@ -26,7 +26,7 @@ jQuery(function ($) {
                      data: JSON.stringify({id:product_id}),
                      success: function (result) {
                         // покажем список всех товаров
-                        showProducts();
+                        showProductsFirstPage();
                      },
                      error: function (xhr, resp, text) {
                          console.log(xhr, resp, text);

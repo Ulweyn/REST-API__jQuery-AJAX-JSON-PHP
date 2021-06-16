@@ -97,7 +97,7 @@ jQuery(function ($) {
             data: form_data,
             success: function (result) {
                 // продукт был создан, возврат к списку продуктов
-                showProducts();
+                showProductsFirstPage();
             },
             error: function () {
                 // вывод ошибки в консоль

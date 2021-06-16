@@ -219,7 +219,7 @@ class Product{
 
         // свяжем значения переменных
         $stmt->bindParam(1, $from_record_num, PDO::PARAM_INT);
-        $stmt->bindParam(1, $records_per_page, PDO::PARAM_INT);
+        $stmt->bindParam(2, $records_per_page, PDO::PARAM_INT);
 
         // выполняем запрос
         $stmt->execute();
@@ -229,7 +229,7 @@ class Product{
     }
 
     public function count() {
-        $query = "SELECT COUNT(*) AS total_rows FROM " . $this->table_name . "";
+        $query = "SELECT COUNT(*) AS total_rows FROM " . $this->table_name . " ";
 
         $stmt = $this->conn->prepare($query);
         $stmt->execute();

@@ -50,7 +50,8 @@ if($num>0) {
 
     // подключим пагинацию
     $total_rows = $product->count();
-    $page_url="{$home_url}product/read_paging.php?";
+    $page_url="api/product/read_paging.php?";
+    //$page_url="{$home_url}product/read_paging.php?";
     $paging=$utilities->getPaging($page, $total_rows, $records_per_page, $page_url);
     $product_arr["paging"]=$paging;
 

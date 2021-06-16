@@ -77,7 +77,7 @@ jQuery(function ($) {
             data: form_data,
             success: function (result) {
                 // продукт был создан, вернутся к списку продуктов
-                showProducts();
+                showProductsFirstPage();
                 },
             errors: function (xhr, resp, text) {
                 // вывести ошибку в консоль

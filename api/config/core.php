@@ -5,10 +5,10 @@ ini_set('display_errors',1);
 error_reporting(E_ALL);
 
 // url домашней страницы
-$home_url="http://localhost/api/";
+$home_url="http://REST-API__jQuery+AJAX+JSON+PHP/api/";
 
 // страница указана в параметре URL, страница по умолчанию одна
-$page = isset($_GET['page'])? $$_GET['page'] : 1;
+$page = isset($_GET['page'])? $_GET['page'] : 1;
 
 // установка количества записей на странице
 $records_per_page = 5;

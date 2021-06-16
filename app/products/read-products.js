@@ -14,7 +14,7 @@ jQuery(function ($) {
         var json_url=$(this).find('a').attr('data-page');
         // показываем список товаров
         showProducts(json_url);
-    })
+    });
 });
 
 
@@ -26,29 +26,13 @@ function showProductsFirstPage(){
 // функция для показа списка товаров
 function showProducts(json_url) {
     // получить список товаров из API
-    $.getJSON("api/product/read.php", function (data) {
+    $.getJSON(json_url, function (data) {
 
         // HTML для перечисления товаров
         readProductsTemplate(data, "");
 
         // изменяем заголовок страницы
         changePageTitle("Все товары");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         // // html for Listing products
         // var read_products_html = `
