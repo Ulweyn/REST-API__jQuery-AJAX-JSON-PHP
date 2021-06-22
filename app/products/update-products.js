@@ -23,7 +23,7 @@ jQuery(function ($) {
 
                 $.each(data.records, function (key,val) {
                     // опция предварительного выбора - это идентификатор категории
-                    if(val.id==category_id){
+                    if(val.id===category_id){
                         categories_options_html+=`<option value='` + val.id + `' selected>` + val.name + `</option>`;
                     } else {
                         categories_options_html+=`<option value='` + val.id + `'>` + val.name + `</option>`;
